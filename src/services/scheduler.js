@@ -26,6 +26,12 @@ async function enviarMensajes(client) {
 
     // --- PROCESO DE CUMPLE ---
     if (alumno.cumple === hoyMMDD) {
+      if (!GROUP_ID) {
+        console.error(
+          "⚠️ Error: GROUP_ID no está definido en las variables de entorno. No se puede enviar el saludo.",
+        );
+        continue;
+      }
       try {
         const mensaje = `¡Hoy es cumple de ${alumno.nombre}! 🎉🏐 A meterle huevo hoy en la cancha.`;
         await client.sendMessage(GROUP_ID, mensaje, { sendSeen: false });
