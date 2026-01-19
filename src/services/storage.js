@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "node:fs";
 import { DB_PATH } from "../config/config.js";
 
 export const leerAlumnos = () => {

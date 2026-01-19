@@ -7,7 +7,7 @@ async function enviarMensajes(client) {
   const hoyFull = ahora.toLocaleDateString("en-CA", { timeZone: TIMEZONE });
   const hoyMMDD = hoyFull.slice(5, 10);
 
-  console.log(`🔎 Revisando fecha: ${hoyFull}`);
+  console.log(`Revisando fecha: ${hoyFull}`);
   const alumnos = leerAlumnos();
 
   for (const alumno of alumnos) {

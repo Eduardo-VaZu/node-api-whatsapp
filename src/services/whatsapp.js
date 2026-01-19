@@ -5,7 +5,17 @@ import qrcode from "qrcode-terminal";
 const client = new Client({
   authStrategy: new LocalAuth(),
   puppeteer: {
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-accelerated-2d-canvas",
+      "--no-first-run",
+      "--no-zygote",
+      "--single-process",
+      "--disable-gpu",
+    ],
+    executablePath: "google-chrome-stable",
     handleSIGINT: false,
   },
 });
@@ -15,7 +25,7 @@ client.on("qr", (qr) => {
 });
 
 client.on("ready", () => {
-  console.log("✅ WhatsApp de la Academia Online Conectado");
+  console.log("WhatsApp de la Academia Online Conectado");
 });
 
 client.on("message", async (msg) => {
