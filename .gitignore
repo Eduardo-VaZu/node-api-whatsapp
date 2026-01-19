@@ -1,0 +1,7 @@
+node_modules/
+.wwebjs_auth/
+.wwebjs_cache/
+*.log
+.DS_Store
+# Descomentar la siguiente línea si no quieres subir los datos reales de alumnos
+# alumnos.json
