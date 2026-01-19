@@ -11,13 +11,12 @@ const client = new Client({
       "--disable-dev-shm-usage",
       "--disable-accelerated-2d-canvas",
       "--no-first-run",
-      "--no-zygote",
-      "--single-process",
       "--disable-gpu",
     ],
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
     handleSIGINT: false,
   },
+  authTimeoutMs: 60000,
 });
 
 client.on("qr", (qr) => {
